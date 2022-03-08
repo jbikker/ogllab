@@ -1,0 +1,11 @@
+newmtl lightmat1
+Kd 0 1 0
+
+newmtl lightmat2
+Kd 1 0 0
+
+newmtl lightmat3
+Kd 0 0 1
+
+
+

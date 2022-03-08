@@ -1,0 +1,438 @@
+# 
+# Wavefront material file
+# Converted by the DEEP Exploration  Deep Exploration 5 5.0.4.1779 Release
+# Right Hemisphere, LTD
+# http://www.righthemisphere.com/
+# 
+
+newmtl leaf
+Ka 1 1 1
+Kd 0.588 0.588 0.588
+Ks 0 0 0
+illum 2
+Ns 10
+map_Kd sponza_thorn_diff.png
+map_bump sponza_thorn_ddn.png
+bump sponza_thorn_ddn.png
+map_opacity sponza_thorn_mask.png
+map_d sponza_thorn_mask.png
+refl 
+map_kS 
+map_kA sponza_thorn_diff.png
+map_Ns 
+
+newmtl Material__57
+Ka 1 1 1
+Kd 0.588 0.588 0.588
+Ks 0 0 0
+illum 2
+Ns 10
+map_Kd vase_plant.png
+map_bump 
+bump 
+map_opacity vase_plant_mask.png
+map_d vase_plant_mask.png
+refl 
+map_kS 
+map_kA vase_plant.png
+map_Ns 
+
+newmtl vase_round
+Ka 1 1 1
+Kd 0.588 0.588 0.588
+Ks 0 0 0
+illum 2
+Ns 10
+map_Kd vase_round.png
+map_bump vase_round_ddn.png
+bump vase_round_ddn.png
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA vase_round.png
+map_Ns 
+
+newmtl Explorer_Default
+Ka 0.117647 0.117647 0.117647
+Kd 0.752941 0.752941 0.752941
+Ks 0.752941 0.752941 0.752941
+illum 2
+Ns 8
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl Material__298
+Ka 1 1 1
+Kd 0.588 0.588 0.588
+Ks 0 0 0
+illum 2
+Ns 10
+map_Kd background.png
+map_bump background_ddn.png
+bump background_ddn.png
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA background.png
+map_Ns 
+
+newmtl _6___Default
+Ka 0.588 0.588 0.588
+Kd 0.588 0.588 0.588
+Ks 0 0 0
+illum 2
+Ns 10
+map_Kd textures\\gi_flag.tga
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA textures\\gi_flag.tga
+map_Ns 
+
+newmtl bricks
+Ka 1 1 1
+Kd 0.588 0.588 0.588
+Ks 0 0 0
+illum 2
+Ns 10
+map_Kd spnza_bricks_a_diff.png
+map_bump spnza_bricks_a_diff.png
+bump spnza_bricks_a_diff.png
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA spnza_bricks_a_diff.png
+map_Ns 
+
+newmtl arch
+Ka 1 1 1
+Kd 0.588 0.588 0.588
+Ks 0 0 0
+illum 2
+Ns 10
+map_Kd sponza_arch_diff.png
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA sponza_arch_diff.png
+map_Ns 
+
+newmtl ceiling
+Ka 1 1 1
+Kd 0.588 0.588 0.588
+Ks 0 0 0
+illum 2
+Ns 10
+map_Kd sponza_ceiling_a_diff.png
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA sponza_ceiling_a_diff.png
+map_Ns 
+
+newmtl column_a
+Ka 1 1 1
+Kd 0.588 0.588 0.588
+Ks 0 0 0
+illum 2
+Ns 10
+map_Kd sponza_column_a_diff.png
+map_bump sponza_column_a_ddn.png
+bump sponza_column_a_ddn.png
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA sponza_column_a_diff.png
+map_Ns 
+
+newmtl floor
+Ka 1 1 1
+Kd 0.588 0.588 0.588
+Ks 0 0 0
+illum 2
+Ns 10
+map_Kd sponza_floor_a_diff.png
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA sponza_floor_a_diff.png
+map_Ns 
+
+newmtl column_c
+Ka 1 1 1
+Kd 0.588 0.588 0.588
+Ks 0 0 0
+illum 2
+Ns 10
+map_Kd sponza_column_c_diff.png
+map_bump sponza_column_c_ddn.png
+bump sponza_column_c_ddn.png
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA sponza_column_c_diff.png
+map_Ns 
+
+newmtl details
+Ka 1 1 1
+Kd 0.588 0.588 0.588
+Ks 0 0 0
+illum 2
+Ns 10
+map_Kd sponza_details_diff.png
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA sponza_details_diff.png
+map_Ns 
+
+newmtl column_b
+Ka 1 1 1
+Kd 0.588 0.588 0.588
+Ks 0 0 0
+illum 2
+Ns 10
+map_Kd sponza_column_b_diff.png
+map_bump sponza_column_b_ddn.png
+bump sponza_column_b_ddn.png
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA sponza_column_b_diff.png
+map_Ns 
+
+newmtl Material__47
+Ka 0.588 0.588 0.588
+Kd 0.588 0.588 0.588
+Ks 0 0 0
+illum 2
+Ns 10
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl flagpole
+Ka 1 1 1
+Kd 0.588 0.588 0.588
+Ks 0 0 0
+illum 2
+Ns 10
+map_Kd sponza_flagpole_diff.png
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA sponza_flagpole_diff.png
+map_Ns 
+
+newmtl fabric_e
+Ka 1 1 1
+Kd 0.588 0.588 0.588
+Ks 0 0 0
+illum 2
+Ns 10
+map_Kd sponza_fabric_green_diff.png
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA sponza_fabric_green_diff.png
+map_Ns 
+
+newmtl fabric_d
+Ka 1 1 1
+Kd 0.588 0.588 0.588
+Ks 0 0 0
+illum 2
+Ns 10
+map_Kd sponza_fabric_blue_diff.png
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA sponza_fabric_blue_diff.png
+map_Ns 
+
+newmtl fabric_a
+Ka 1 1 1
+Kd 0.588 0.588 0.588
+Ks 0 0 0
+illum 2
+Ns 10
+map_Kd sponza_fabric_diff.png
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA sponza_fabric_diff.png
+map_Ns 
+
+newmtl fabric_g
+Ka 1 1 1
+Kd 0.588 0.588 0.588
+Ks 0 0 0
+illum 2
+Ns 10
+map_Kd sponza_curtain_blue_diff.png
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA sponza_curtain_blue_diff.png
+map_Ns 
+
+newmtl fabric_c
+Ka 1 1 1
+Kd 0.588 0.588 0.588
+Ks 0 0 0
+illum 2
+Ns 10
+map_Kd sponza_curtain_diff.png
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA sponza_curtain_diff.png
+map_Ns 
+
+newmtl fabric_f
+Ka 1 1 1
+Kd 0.588 0.588 0.588
+Ks 0 0 0
+illum 2
+Ns 10
+map_Kd sponza_curtain_green_diff.png
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA sponza_curtain_green_diff.png
+map_Ns 
+
+newmtl chain
+Ka 1 1 1
+Kd 0.588 0.588 0.588
+Ks 0 0 0
+illum 2
+Ns 10
+map_Kd chain_texture.png
+map_bump chain_texture_ddn.png
+bump chain_texture_ddn.png
+map_opacity chain_texture_mask.png
+map_d chain_texture_mask.png
+refl 
+map_kS 
+map_kA chain_texture.png
+map_Ns 
+
+newmtl vase_hanging
+Ka 1 1 1
+Kd 0.588 0.588 0.588
+Ks 0 0 0
+illum 2
+Ns 10
+map_Kd vase_hanging.png
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA vase_hanging.png
+map_Ns 
+
+newmtl vase
+Ka 1 1 1
+Kd 0.588 0.588 0.588
+Ks 0 0 0
+illum 2
+Ns 10
+map_Kd vase_dif.png
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA vase_dif.png
+map_Ns 
+
+newmtl Material__25
+Ka 1 1 1
+Kd 0.588 0.588 0.588
+Ks 0 0 0
+illum 2
+Ns 10
+map_Kd lion.png
+map_bump lion_ddn.png
+bump lion_ddn.png
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA lion.png
+map_Ns 
+
+newmtl roof
+Ka 1 1 1
+Kd 0.588 0.588 0.588
+Ks 0 0 0
+illum 2
+Ns 10
+map_Kd sponza_roof_diff.png
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA sponza_roof_diff.png
+map_Ns 

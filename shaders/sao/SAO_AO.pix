@@ -1,0 +1,88 @@
+#version 400
+
+#define NUM_SAMPLES (9)
+#define LOG_MAX_OFFSET (3)
+#define MAX_MIP_LEVEL (5)
+#define FAR_PLANE_Z (-500.0)
+#define NUM_SPIRAL_TURNS (7)
+
+uniform vec4 projInfo;
+uniform float projScale;
+uniform sampler2D CS_Z_buffer;
+uniform float radius;
+uniform float bias;
+uniform float intensityDivR6;
+
+float radius2 = radius * radius;
+
+out vec3 pixel;
+
+#define visibility pixel.r
+#define bilateralKey pixel.gb
+
+vec3 reconstructCSPosition( vec2 S, float z )	{ return vec3( (S * projInfo.xy + projInfo.zw) * z, z ); }
+vec3 reconstructCSFaceNormal( vec3 C )			{ return normalize( cross( dFdx( C ), dFdy( C ) ) ); }
+float CSZToKey(float z)							{ return clamp( z * (1.0 / FAR_PLANE_Z), 0.0, 1.0 ); }
+
+void packKey( float key, out vec2 p ) 
+{
+	float temp = floor( key * 256.0 );
+	p.x = temp * (1.0 / 256.0), p.y = key * 256.0 - temp;
+}
+
+// get camera space position for pixel centre and depth buffer value
+vec3 getCSPosition( ivec2 ssP ) 
+{
+	vec3 P;
+	P.z = texelFetch( CS_Z_buffer, ssP, 0 ).r;
+	P = reconstructCSPosition( vec2( ssP ) + vec2( 0.5 ), P.z );
+	return P;
+}
+
+vec3 getOffsetPosition( ivec2 ssC, vec2 unitOffset, float ssR ) 
+{
+	int mipLevel = clamp( findMSB( int( ssR ) ) - LOG_MAX_OFFSET, 0, MAX_MIP_LEVEL );
+	// int mipLevel = clamp(int(floor(log2(ssR))) - LOG_MAX_OFFSET, 0, MAX_MIP_LEVEL); // for 330
+	ivec2 ssP = ivec2( ssR * unitOffset ) + ssC;
+	vec3 P;
+	ivec2 mipP = clamp( ssP >> mipLevel, ivec2( 0 ), textureSize( CS_Z_buffer, mipLevel ) - ivec2( 1 ) );
+	P.z = texelFetch( CS_Z_buffer, mipP, mipLevel ).r;
+	P = reconstructCSPosition( vec2( ssP ) + vec2( 0.5 ), P.z );
+	return P;
+}
+
+vec2 tapLocation( int sampleNumber, float spinAngle, out float ssR )
+{
+	float alpha = float( sampleNumber + 0.5 ) * (1.0 / NUM_SAMPLES);
+	float angle = alpha * (NUM_SPIRAL_TURNS * 6.28) + spinAngle;
+	ssR = alpha;
+	return vec2( cos( angle ), sin( angle ) );
+}
+
+float sampleAO( in ivec2 ssC, in vec3 P, in vec3 N, in float ssDiskRadius, in int tapIndex, in float randomPatternRotationAngle ) 
+{
+	float ssR;
+	vec2 unitOffset = tapLocation( tapIndex, randomPatternRotationAngle, ssR );
+	vec3 v = getOffsetPosition( ssC, unitOffset, ssR * ssDiskRadius ) - P;
+	float vv = dot( v, v ), f = max( radius2 - vv, 0.0 ); 
+	return f * f * f * max( (dot( v, N ) - bias ) / (vv + 0.01), 0.0 );
+}
+
+void main() 
+{
+	ivec2 ssC = ivec2( gl_FragCoord.xy );
+	vec3 P = getCSPosition( ssC );
+	packKey( CSZToKey( P.z ), bilateralKey );
+	/* Unneccessary with depth test. if (P.z < FAR_PLANE_Z) discard; // we're on the skybox	*/
+	float randomPatternRotationAngle = (3 * ssC.x ^ ssC.y + ssC.x * ssC.y) * 10;
+	vec3 N = reconstructCSFaceNormal( P );
+	float ssDiskRadius = -projScale * radius / P.z;
+	float sum = 0.0;
+	for( int i = 0; i < NUM_SAMPLES; ++i ) sum += sampleAO( ssC, P, N, ssDiskRadius, i, randomPatternRotationAngle );
+	float A = max( 0.0, 1.0 - sum * intensityDivR6 * (5.0 / NUM_SAMPLES) );
+	if (abs( dFdx( P.z ) ) < 0.02) A -= dFdx( A ) * ((ssC.x & 1) - 0.5);
+	if (abs( dFdy( P.z ) ) < 0.02) A -= dFdy( A ) * ((ssC.y & 1) - 0.5);
+	visibility = A;
+}
+
+// EOF

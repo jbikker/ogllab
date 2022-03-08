@@ -1,0 +1,13 @@
+vec3 Shade( const vec3 _Diffuse, const vec3 _LightColor, const vec3 _N, vec3 _L, const vec3 _V, const float _Vis )
+{
+	// Shading Models for Game Development, Eq. 10
+	if (_Vis * dot( _L, _N ) <= 0) return vec3( 0.0 );
+	float att = 1.0 / dot( _L, _L );
+	_L = normalize( _L );
+	vec3 H = normalize( _V + _L );
+	float v = 1 - dot( _L, H );
+	float fresnel = mix( 0.1, 1, v * v * v * v * v );
+	float specularity = 100.0;
+	float spec = ((specularity + 2.0) / 8.0) * pow( clamp( dot( H, _N ), 0.0, 1.0 ), specularity ) * fresnel;
+	return (dot( _L, _N ) * att * _Vis) * ((spec + 1) * _LightColor * _Diffuse);
+}

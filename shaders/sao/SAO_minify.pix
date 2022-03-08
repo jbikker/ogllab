@@ -1,0 +1,16 @@
+#version 330
+#extension GL_EXT_gpu_shader4 : require
+
+uniform sampler2D data;
+uniform int previousMIPNumber;    
+
+out vec4 pixel;
+
+void main() 
+{
+    ivec2 ssP = ivec2( gl_FragCoord.xy );
+	ivec2 tSize = textureSize( data, previousMIPNumber );
+    pixel = texelFetch2D( data, clamp( ssP * 2 + ivec2( ssP.y & 1, ssP.x & 1 ), ivec2( 0 ), tSize - ivec2( 1 ) ), previousMIPNumber );
+}
+
+// EOF

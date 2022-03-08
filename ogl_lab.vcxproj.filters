@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="system.cpp" />
+    <ClCompile Include="precomp.cpp" />
+    <ClCompile Include="engine\camera.cpp">
+      <Filter>engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\light.cpp">
+      <Filter>engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\material.cpp">
+      <Filter>engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\maths.cpp">
+      <Filter>engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\node.cpp">
+      <Filter>engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\pass.cpp">
+      <Filter>engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\renderer.cpp">
+      <Filter>engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\scene.cpp">
+      <Filter>engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\shader.cpp">
+      <Filter>engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\target.cpp">
+      <Filter>engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\technique.cpp">
+      <Filter>engine</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\texture.cpp">
+      <Filter>engine</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="system.h" />
+    <ClInclude Include="precomp.h" />
+    <ClInclude Include="engine\camera.h">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\common.h">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\light.h">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\material.h">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\maths.h">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\node.h">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\pass.h">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\renderer.h">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\scene.h">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\shader.h">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\target.h">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\technique.h">
+      <Filter>engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\texture.h">
+      <Filter>engine</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="shaders">
+      <UniqueIdentifier>{d28e2576-e029-4e06-8a6c-974dea33b088}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaders\sao">
+      <UniqueIdentifier>{5f7dd4c0-8673-40ca-b999-4a4472b17292}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaders\shadows">
+      <UniqueIdentifier>{60857a98-c08b-4ade-8535-927a79a6be00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaders\sky">
+      <UniqueIdentifier>{f1994ea6-ea13-4047-9888-0ffd85a94712}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaders\hqdof">
+      <UniqueIdentifier>{1d1db797-ff1b-4c5b-9e1e-bd5aca12cc20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaders\dof">
+      <UniqueIdentifier>{387313f9-a1a0-403b-8e58-a4b6480a30c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaders\functions">
+      <UniqueIdentifier>{b7775410-05cc-4d6e-8985-b2ba61bf161f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="engine">
+      <UniqueIdentifier>{45818f07-1442-44d7-afca-d415d59d5266}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="notes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\gbuffer.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\gbuffer.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\postproc.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\postproc.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\sao\SAO.vrt">
+      <Filter>shaders\sao</Filter>
+    </None>
+    <None Include="shaders\sao\SAO_AO.pix">
+      <Filter>shaders\sao</Filter>
+    </None>
+    <None Include="shaders\sao\SAO_blur.pix">
+      <Filter>shaders\sao</Filter>
+    </None>
+    <None Include="shaders\sao\SAO_minify.pix">
+      <Filter>shaders\sao</Filter>
+    </None>
+    <None Include="shaders\sao\reconstruct.glsl">
+      <Filter>shaders\sao</Filter>
+    </None>
+    <None Include="shaders\debug.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\copy.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\copy.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\shadow.frag">
+      <Filter>shaders\shadows</Filter>
+    </None>
+    <None Include="shaders\shadow.vert">
+      <Filter>shaders\shadows</Filter>
+    </None>
+    <None Include="shaders\shadowcube.frag">
+      <Filter>shaders\shadows</Filter>
+    </None>
+    <None Include="shaders\shadowcube.vert">
+      <Filter>shaders\shadows</Filter>
+    </None>
+    <None Include="shaders\sky.frag">
+      <Filter>shaders\sky</Filter>
+    </None>
+    <None Include="shaders\sky.vert">
+      <Filter>shaders\sky</Filter>
+    </None>
+    <None Include="shaders\sky_G.frag">
+      <Filter>shaders\sky</Filter>
+    </None>
+    <None Include="shaders\sky_G.vert">
+      <Filter>shaders\sky</Filter>
+    </None>
+    <None Include="shaders\hqdof.frag">
+      <Filter>shaders\hqdof</Filter>
+    </None>
+    <None Include="shaders\hqdof.vert">
+      <Filter>shaders\hqdof</Filter>
+    </None>
+    <None Include="shaders\hqdofcombine.frag">
+      <Filter>shaders\hqdof</Filter>
+    </None>
+    <None Include="shaders\hqdofcombine.vert">
+      <Filter>shaders\hqdof</Filter>
+    </None>
+    <None Include="shaders\dof.frag">
+      <Filter>shaders\dof</Filter>
+    </None>
+    <None Include="shaders\dof.vert">
+      <Filter>shaders\dof</Filter>
+    </None>
+    <None Include="shaders\linearz.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\linearz.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\ssrr.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\ssrr.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\shade.func">
+      <Filter>shaders\functions</Filter>
+    </None>
+    <None Include="shaders\shade_special.func">
+      <Filter>shaders\functions</Filter>
+    </None>
+    <None Include="shaders\perturb.func">
+      <Filter>shaders\functions</Filter>
+    </None>
+    <None Include="shaders\stochastic.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\stochastic.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\finalizeao.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\finalizeao.vert">
+      <Filter>shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>

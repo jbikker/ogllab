@@ -1,0 +1,49 @@
+newmtl tile_floor_concreteSmooth_mat
+Ka 0 0 0
+Kd 1 1 1
+Ks 0.0671642 0.0631544 0.0631544
+illum 2
+Ns 100.316
+map_Kd tile_floor_concreteSmooth_dff.png
+map_bump tile_floor_concreteSmooth_dff.pngnormalmap.png
+bump tile_floor_concreteSmooth_dff.pngnormalmap.png
+refl 0.0
+
+newmtl tile_chevron_yellow_mat
+Ka 0 0 0
+Kd 1 1 1
+Ks 0.870629 0.870629 0.870629
+illum 2
+Ns 176.13
+map_Kd tile_chevron_yellow_dff.png
+map_bump tile_chevron_yellow_dff.pngnormalmap.png
+bump tile_chevron_yellow_dff.pngnormalmap.png
+refl 0.0
+
+newmtl vehicle_rcLand_clean_dome_mat
+Ka 0 0 0
+Kd 1 1 1
+Ks 0.772884 1 0.761194
+illum 2
+Ns 280.328
+refl 0.5
+map_Env grid.png
+
+newmtl vehicle_rcFlyer_metal_mat
+Ka 0 0 0
+Kd 1 1 1
+Ks 0.961538 0.961538 0.961538
+illum 2
+Ns 413.991
+map_Kd vehicle_rcFlyer_dff.png
+map_bump vehicle_rcFlyer_dff.pngnormalmap.png
+bump vehicle_rcFlyer_dff.pngnormalmap.png
+refl 0.5
+map_Env grid.png
+
+newmtl Explorer_Default
+Ka 0.117647 0.117647 0.117647
+Kd 0.752941 0.752941 0.752941
+Ks 0.752941 0.752941 0.752941
+illum 2
+Ns 8

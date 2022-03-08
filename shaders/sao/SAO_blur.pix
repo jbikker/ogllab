@@ -1,0 +1,56 @@
+#version 330
+
+#define EDGE_SHARPNESS		1.0		// increase to make depth edges crisper; decrease to reduce flicker
+#define SCALE				2		// 2 or 3
+#define R					6		// filter radius in pixels; will be multiplied by SCALE
+
+// Gaussian coefficients
+float gaussian[R+1] = float[](0.111220, 0.107798, 0.098151, 0.083953, 0.067458, 0.050920, 0.036108); // stddev = 3.0
+
+uniform sampler2D			source;
+uniform ivec2				axis;
+
+out vec3					pixel;
+
+#define  result				pixel.r
+#define  keyPassThrough		pixel.gb
+
+float unpackKey( vec2 p ) 
+{
+	return p.x * (256.0 / 257.0) + p.y * (1.0 / 257.0);
+}
+
+void main() 
+{
+    ivec2 ssC = ivec2( gl_FragCoord.xy );
+    vec4 temp = texelFetch( source, ssC, 0 );
+    keyPassThrough = temp.gb;
+    float key = unpackKey( keyPassThrough );
+    float sum = temp.r;
+    if (key == 1.0) 
+	{ 
+        // sky pixel (if you aren't using depth keying, disable this test)
+        result = sum;
+        return;
+    }
+    float BASE = gaussian[0];
+    float totalWeight = BASE;
+    sum *= totalWeight;
+    for( int r = -R; r <= R; ++r ) 
+	{
+        if (r != 0) 
+		{
+            temp = texelFetch( source, ssC + axis * (r * SCALE), 0 );
+            float tapKey = unpackKey( temp.gb );
+            float value  = temp.r;
+            float weight = 0.3 + gaussian[abs(r)];
+            weight *= max( 0.0, 1.0 - (EDGE_SHARPNESS * 2000.0) * abs( tapKey - key ) );
+            sum += value * weight;
+            totalWeight += weight;
+        }
+    }
+    const float epsilon = 0.0001;
+    result = sum / (totalWeight + epsilon);	
+}
+
+// EOF
