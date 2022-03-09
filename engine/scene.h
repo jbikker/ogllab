@@ -26,7 +26,6 @@ public:
 	PointLight* GetLight( const uint _Idx ) { return lightList[_Idx]; }
 	// private methods
 private:
-	TransformNode* LoadAssimp( const char* _File, const float _Scale );
 	TransformNode* LoadOBJ( const char* _File, const float _Scale );
 	TransformNode* LoadBIN( const char* _File, const float _Scale );
 	// data members

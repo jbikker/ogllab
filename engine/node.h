@@ -101,7 +101,6 @@ public:
 	Mesh() : angle( 0 ) {}
 	// methods
 	void CreateFromArrays( vector<vec3>& _Verts, vector<vec3>& _Normals, vector<vec2>& _UVs, vector<uint>& _Indices );
-	void CreateFromAssimp( const aiMesh* _Mesh );
 	void CreateDOFGrid( const ivec2 _Res );
 	// data members
 private:

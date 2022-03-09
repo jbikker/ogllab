@@ -3,6 +3,7 @@
 UniformBuffer::UniformBuffer( void* _Data, uint _Size, uint _Point ) : data( (float*)_Data ), size( _Size ), bindingPoint( _Point )
 {
 	glGenBuffers( 1, &id );
+	CheckGL();
 }
 
 void UniformBuffer::Update()
@@ -10,6 +11,7 @@ void UniformBuffer::Update()
 	glBindBuffer( GL_UNIFORM_BUFFER, id );
 	glBufferData( GL_UNIFORM_BUFFER, size, data, GL_STATIC_DRAW );
 	glBindBufferBase( GL_UNIFORM_BUFFER, bindingPoint, id );
+	CheckGL();
 }
 
 TextureBuffer::TextureBuffer( uint _Size ) : size( _Size )
@@ -97,6 +99,7 @@ bool Renderer::Create30Context()
 	}
 	else hrc = tempOpenGLContext;				// no support for OpenGL 3.x and up, use 2.1
 	printf( "device: %s\n", glGetString( GL_RENDERER ) );
+	CheckGL();
 	return true;
 }
 

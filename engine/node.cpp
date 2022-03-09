@@ -220,38 +220,6 @@ void Mesh::CreateFromArrays( vector<vec3>& _Verts, vector<vec3>& _Normals, vecto
 	flags = NODE_STATIC;
 }
 
-void Mesh::CreateFromAssimp( const aiMesh* _Mesh )
-{
-	glGenVertexArrays( 1, &vao );
-	glBindVertexArray( vao );
-	vector<vec3> pos, normal;
-	vector<vec2> uv;
-	vector<uint> idx;
-	pos.reserve( _Mesh->mNumVertices );
-	normal.reserve( _Mesh->mNumVertices );
-	uv.reserve( _Mesh->mNumVertices );
-	idx.reserve( _Mesh->mNumFaces * 3 );
-	for( uint i = 0; i < _Mesh->mNumVertices; i++) 
-	{
-		const aiVector3D& P = _Mesh->mVertices[i];
-		const aiVector3D& N = _Mesh->mNormals[i];
-		pos.push_back( vec3( P.x, P.y, P.z ) );
-		normal.push_back( vec3( N.x, N.y, N.z ) );
-	}
-	if (_Mesh->HasTextureCoords( 0 )) for( uint i = 0; i < _Mesh->mNumVertices; i++) 
-	{
-		const aiVector3D& UV = _Mesh->mTextureCoords[0][i];
-		uv.push_back( vec2( UV.x, UV.y ) );        
-	}
-	for (uint i = 0; i < _Mesh->mNumFaces ; i++) 
-	{
-		const aiFace& tri = _Mesh->mFaces[i];
-		idx.push_back( tri.mIndices[0] );
-		idx.push_back( tri.mIndices[1] );
-		idx.push_back( tri.mIndices[2] );
-	}
-}
-
 Quad::Quad()
 {
 	// hardcoded arrays

@@ -3,7 +3,6 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="system.cpp" />
-    <ClCompile Include="precomp.cpp" />
     <ClCompile Include="engine\camera.cpp">
       <Filter>engine</Filter>
     </ClCompile>

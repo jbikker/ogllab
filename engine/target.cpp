@@ -206,8 +206,8 @@ GenericTarget::GenericTarget( uint _Width, uint _Height, TargetFlags _Flags )
 	}
 	else
 	{
-		glFramebufferRenderbuffer( GL_DRAW_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_NONE, 0 );
- 	}
+		glFramebufferRenderbuffer( GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, 0 );
+	}
 	CheckFrameBuffer();
 	glBindFramebuffer( GL_DRAW_FRAMEBUFFER, 0 );
 }

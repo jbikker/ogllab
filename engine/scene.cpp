@@ -67,21 +67,6 @@ TransformNode* Scene::Load( const char* _File, const float _Scale )
 	ExtractScenePath( _File );
 	if (strstr( _File, ".bin" ) == (_File + strlen( _File ) - 4)) return LoadBIN( _File, _Scale );
 	else if (strstr( _File, ".obj" ) == (_File + strlen( _File ) - 4)) return LoadOBJ( _File, _Scale );
-	else return LoadAssimp( _File, _Scale );
-}
-
-TransformNode* Scene::LoadAssimp( const char* _File, const float _Scale )
-{
-	TransformNode* root = new TransformNode();
-	Mesh* current = 0;
-	Assimp::Importer importer;
-	const aiScene* scene = importer.ReadFile( _File, aiProcess_Triangulate | aiProcess_GenSmoothNormals | aiProcess_FlipUVs );
-	for (uint i = 0; i < scene->mNumMeshes; i++)
-	{
-		const aiMesh* mesh = scene->mMeshes[i];
-		current = new Mesh();
-		current->CreateFromAssimp( mesh );
-	}
 	return 0;
 }
 

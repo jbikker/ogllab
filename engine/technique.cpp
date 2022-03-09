@@ -41,6 +41,7 @@ void HQTechnique::Init()
 	HQDOFTarget =  new GenericTarget( 128, 64, TARGET_FLOATCOLOR );
 	hqdof = new HQDOFPass();
 #endif
+	CheckGL();
 }
 
 void HQTechnique::Resize( uint _Width, uint _Height )
@@ -189,12 +190,14 @@ void BasicTechnique::Init()
 	postprocTargetB = new GenericTarget( 64, 64 );
 	shadowCubeTarget[0] = new ShadowCubeTarget( 1024, 1024 );
 	shadowCubeTarget[1] = new ShadowCubeTarget( 1024, 1024 );
-	cubemapTarget = new CubemapTarget( 1024, 1024 );
+	cubemapTarget = new
+	CubemapTarget( 1024, 1024 );
 	// render passes
 	fxaa = new FXAAPass();
 	cubem = new CubemapPass();
 	shad = new ShadowCubePass();
 	fw = new ForwardPass();
+	CheckGL();
 }
 
 void BasicTechnique::Resize( uint _Width, uint _Height )
@@ -275,6 +278,7 @@ void StochasticTechnique::Init()
 	fxaa = new FXAAPass();
 	blur = new BlurPass();
 	comb = new CombinePass();
+	CheckGL();
 }
 
 void StochasticTechnique::Resize( uint _Width, uint _Height )

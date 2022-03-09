@@ -13,10 +13,7 @@
 
 // external libraries
 #include "freeimage.h"
-#include <assimp/importer.hpp>
-// #include <assimp/cimport.h>
-#include <assimp/scene.h>
-#include <assimp/postprocess.h>
+#include <string>
 
 // opengl lib includes
 #pragma comment(lib, "glew32.lib")
