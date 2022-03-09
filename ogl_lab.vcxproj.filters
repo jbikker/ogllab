@@ -41,7 +41,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="system.h" />
     <ClInclude Include="precomp.h" />
     <ClInclude Include="engine\camera.h">
       <Filter>engine</Filter>
@@ -108,9 +107,6 @@
     <Filter Include="engine">
       <UniqueIdentifier>{45818f07-1442-44d7-afca-d415d59d5266}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="notes.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\gbuffer.frag">

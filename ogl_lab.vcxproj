@@ -211,10 +211,6 @@
     <ClInclude Include="engine\technique.h" />
     <ClInclude Include="engine\texture.h" />
     <ClInclude Include="precomp.h" />
-    <ClInclude Include="system.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="notes.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\copy.frag" />

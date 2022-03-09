@@ -25,7 +25,6 @@ using namespace glm;
 // library includes
 #include "maths.h"
 #include "shader.h"
-#include "system.h"
 #include "light.h"
 #include "texture.h"
 #include "material.h"
